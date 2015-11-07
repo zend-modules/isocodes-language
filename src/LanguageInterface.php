@@ -33,13 +33,6 @@
     public function getCode2T();
 
     /**
-     * Get ISO-639-3 (three-letter) code
-     *
-     * @return string
-     */
-    public function getCode3();
-
-    /**
      * Get english name
      * 
      * @return string

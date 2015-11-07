@@ -74,21 +74,6 @@ class LanguageManager
     }
 
     /**
-     * Get language name from ISO-639-3 (three-letter codes)
-     *
-     * @param string $code
-     * @return string
-     */
-    public function getByCode3($code)
-    {
-        $lang = $this->getAdapter()->getByCode3($code);
-        if (null !== $lang) {
-            return new Language($lang);
-        }
-        return null;
-    }
-
-    /**
      * Get the languages adater.
      * 
      * @return AdapterInterface|null

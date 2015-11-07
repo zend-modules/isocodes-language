@@ -16,28 +16,21 @@ class Language implements LanguageInterface
      * 
      * @var string
      */
-    protected $code = null;
+    protected $alpha_2 = null;
 
     /**
      * ISO-639-2/t (three-letter codes) terminologic
      *
      * @var string
      */
-    protected $code2_t = null;
+    protected $alpha_3t = null;
 
     /**
      * ISO-639-2/b (three-letter codes) bibliographic
      * 
      * @var string
      */
-    protected $code2_b = null;
-
-    /**
-     * ISO-639-3 (three-letter codes)
-     *
-     * @var string
-     */
-    protected $code3 = null;
+    protected $alpha_3b = null;
 
     /**
      * English name
@@ -57,17 +50,15 @@ class Language implements LanguageInterface
     {
         if (is_array($data)) {
             // TODO: Sanity checks
-            $this->code        = isset($data['code']) ? $data['code'] : null;
-            $this->code2_t     = isset($data['code2_t']) ? $data['code2_t'] : null;
-            $this->code2_b     = isset($data['code2_b']) ? $data['code2_b'] : null;
-            $this->code3       = isset($data['code3']) ? $data['code3'] : null;
+            $this->alpha_2     = isset($data['alpha_2']) ? $data['code'] : null;
+            $this->alpha_3t    = isset($data['alpha_3t']) ? $data['code2_t'] : null;
+            $this->alpha_3b    = isset($data['alpha_3b']) ? $data['code2_b'] : null;
             $this->name        = isset($data['name']) ? $data['name'] : null;
             $this->native_name = isset($data['native_name']) ? $data['native_name'] : null;
         } elseif ($data instanceof LanguageInterface) {
-            $this->code        = $this->getCode();
-            $this->code2_t     = $this->getCode2T();
-            $this->code2_b     = $this->getCode2B();
-            $this->code3       = $this->getCode3();
+            $this->alpha_2     = $this->getCode();
+            $this->alpha_3t    = $this->getCode2T();
+            $this->alpha_3b    = $this->getCode2B();
             $this->name        = $this->getName();
             $this->native_name = $this->getNativeName();
         }
@@ -101,16 +92,6 @@ class Language implements LanguageInterface
     public function getCode2T()
     {
         return $this->code2_t;
-    }
-
-    /**
-     * Get ISO-639-3 (three-letter) code
-     *
-     * @return string
-     */
-    public function getCode3()
-    {
-        return $this->code3;
     }
 
     /**

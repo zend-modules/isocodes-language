@@ -34,12 +34,4 @@ interface AdapterInterface
      * @return array|null
      */
     public function getByCode2T($code);
-
-    /**
-     * Get language name from ISO-639-3 (three-letter codes)
-     *
-     * @param string $code
-     * @return array|null
-     */
-    public function getByCode3($code);
 }
