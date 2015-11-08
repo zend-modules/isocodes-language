@@ -105,6 +105,17 @@ class Language implements LanguageInterface
     }
 
     /**
+     * Set the language name.
+     * 
+     * @param string $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+        return $this;
+    }
+
+    /**
      * Get native name
      * 
      * @return string
